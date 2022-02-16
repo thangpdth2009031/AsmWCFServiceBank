@@ -1,0 +1,15 @@
+C:\Users\trieu\source\repos\BankService1\BankService1\bin\BankService1.dll.config
+C:\Users\trieu\source\repos\BankService1\BankService1\bin\BankService1.dll
+C:\Users\trieu\source\repos\BankService1\BankService1\bin\BankService1.pdb
+C:\Users\trieu\source\repos\BankService1\BankService1\bin\EntityFramework.dll
+C:\Users\trieu\source\repos\BankService1\BankService1\bin\EntityFramework.SqlServer.dll
+C:\Users\trieu\source\repos\BankService1\BankService1\bin\EntityFramework.xml
+C:\Users\trieu\source\repos\BankService1\BankService1\bin\EntityFramework.SqlServer.xml
+C:\Users\trieu\source\repos\BankService1\BankService1\obj\Debug\BankService1.csproj.AssemblyReference.cache
+C:\Users\trieu\source\repos\BankService1\BankService1\obj\Debug\BankService1.csproj.CoreCompileInputs.cache
+C:\Users\trieu\source\repos\BankService1\BankService1\obj\Debug\BankService1.dll
+C:\Users\trieu\source\repos\BankService1\BankService1\obj\Debug\BankService1.pdb
+C:\Users\trieu\source\repos\BankService1\BankService1\obj\Debug\BankService1.Migrations.add_accountDto.resources
+C:\Users\trieu\source\repos\BankService1\BankService1\obj\Debug\BankService1.csproj.GenerateResource.cache
+C:\Users\trieu\source\repos\BankService1\BankService1\obj\Debug\BankService1.Migrations.update_dateTime_account.resources
+C:\Users\trieu\source\repos\BankService1\BankService1\obj\Debug\BankService1.Migrations.add_transactions.resources

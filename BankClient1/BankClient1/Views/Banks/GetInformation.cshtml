@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "GetInformation";
+}
+
+<h2>GetInformation</h2>
+<div>
+    @if (Session["UserName"] != null)
+    {
+        <p>AccountNumber: @Session["AccountNumber"].ToString()</p>
+        <p>UserName: @Session["UserName"].ToString()</p>        
+        <p>FullName: @Session["FullName"].ToString()</p>        
+    }
+
+    <a href="@Url.Action("Logout","Banks")" class="btn btn-warning">Logout</a>
+</div>
+

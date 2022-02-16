@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "WithDraw";
+}
+
+<div>@TempData["name"]</div>
+<div class="row justify-content-md-center">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                @using (Html.BeginForm("WithDraw", "Banks", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <label>Vui lòng nhập số tiền muốn rút</label>
+                        <input type="number" class="form-control" id="amount" name="amount" placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Rút tiền" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
