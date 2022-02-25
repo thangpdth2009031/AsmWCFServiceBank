@@ -13,19 +13,9 @@ namespace BankClient1.Controllers
     public class BanksController : Controller
     {
         private Random _random = new Random();
-        BankService.Service1Client service = new BankService.Service1Client();
-    
+        BankService.Service1Client service = new BankService.Service1Client();          
         [HttpGet]
         public ActionResult GetInformation()
-        {
-            if (Session["UserName"] == null)
-            {
-                return RedirectToAction("Login");
-            }
-            return View();
-        }
-        [HttpGet]
-        public ActionResult GetInformation1()
         {
             if (Session["UserName"] == null)
             {
@@ -35,12 +25,26 @@ namespace BankClient1.Controllers
             {
                 var userName = Session["UserName"].ToString();
                 var password = Session["Password"].ToString();
-                List<AccountDto> listAccount = new List<AccountDto>();
+                List<AccountDto> accountDtos = new List<AccountDto>();
                 var acc = service.GetInformation(userName, password);
-                service.GetTransactionHistory(acc.AccountNumber);
-                listAccount.Add(acc);
-                return View(listAccount);
+                accountDtos.Add(acc);                
+                return View(accountDtos);
             }                       
+        }       
+        public ActionResult GetTransaction()
+        {
+            if (Session["UserName"] == null)
+            {
+                TempData["name"] = "Vui lòng đăng nhập để tiếp tục!";
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                var userName = Session["UserName"].ToString();
+                var password = Session["Password"].ToString();
+                var acc = service.GetInformation(userName, password);
+                return View(service.GetTransactionHistory(acc.AccountNumber));
+            }                          
         }
         public ActionResult Create()
         {
@@ -86,7 +90,7 @@ namespace BankClient1.Controllers
                 Session["UserName"] = acc.UserName;                
                 Session["FullName"] = acc.LastName + acc.FirstName;             
                 Session["Password"] = password;
-                return RedirectToAction("GetInformation1");
+                return RedirectToAction("GetInformation");
             }
             return View("Login");
         }
@@ -96,7 +100,7 @@ namespace BankClient1.Controllers
         {
             if (Session["UserName"] == null)
             {
-                TempData["name"] = "Vui long dang nhap";
+                TempData["name"] = "Vui lòng đăng nhập để tiếp tục!";
                 return RedirectToAction("Login");
             }
             else
@@ -114,10 +118,10 @@ namespace BankClient1.Controllers
             if (account != null)
             {
                 TempData["name"] = "Nạp tiền thành công";
-                return RedirectToAction("GetInformation1");
+                return RedirectToAction("GetInformation");
             } else
             {
-                TempData["name"] = "Vui long dang nhap";
+                TempData["name"] = "Vui lòng đăng nhập để tiếp tục!";
                 return RedirectToAction("Login");
             }            
         }
@@ -125,7 +129,7 @@ namespace BankClient1.Controllers
         {
             if (Session["UserName"] == null)
             {
-                TempData["name"] = "Vui long dang nhap";
+                TempData["name"] = "Vui lòng đăng nhập để tiếp tục!";
                 return RedirectToAction("Login");
             }
             else
@@ -144,11 +148,11 @@ namespace BankClient1.Controllers
             if (account != null)
             {
                 TempData["name"] = "Rút tiền thành công";
-                return RedirectToAction("GetInformation1");
+                return RedirectToAction("GetInformation");
             }
             else
             {
-                TempData["name"] = "Vui long dang nhap";
+                TempData["name"] = "Vui lòng đăng nhập để tiếp tục!";
                 return RedirectToAction("Login");
             }
         }
@@ -156,7 +160,7 @@ namespace BankClient1.Controllers
         {
             if (Session["UserName"] == null)
             {
-                TempData["name"] = "Vui long dang nhap";
+                TempData["name"] = "Vui lòng đăng nhập để tiếp tục!";
                 return RedirectToAction("Login");
             }
             else
@@ -174,11 +178,11 @@ namespace BankClient1.Controllers
             if (account != null)
             {
                 TempData["name"] = "Chuyển tiền thành công";
-                return RedirectToAction("GetInformation1");
+                return RedirectToAction("GetInformation");
             }
             else
             {
-                TempData["name"] = "Vui long dang nhap";
+                TempData["name"] = "Vui lòng đăng nhập để tiếp tục!";
                 return RedirectToAction("Login");
             }
         }

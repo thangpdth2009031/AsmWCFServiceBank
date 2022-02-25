@@ -257,9 +257,7 @@ namespace BankService1
 
         public List<TransactionHistory> GetTransactionHistory(string accountNumber)
         {
-            return db.TransactionHistories.Where(
-               m => m.ReceiverAccountNumber == accountNumber
-                 || m.SenderAccountNumber == accountNumber).ToList();
+            return db.TransactionHistories.Where(m => m.ReceiverAccountNumber == accountNumber || m.SenderAccountNumber == accountNumber).ToList();
         }
     }
 }

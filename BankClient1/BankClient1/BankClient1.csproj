@@ -205,10 +205,10 @@
     <Content Include="Views\Banks\Create.cshtml" />
     <Content Include="Views\Banks\Login.cshtml" />
     <Content Include="Views\Banks\GetInformation.cshtml" />
-    <Content Include="Views\Banks\GetInformation1.cshtml" />
     <Content Include="Views\Banks\Deposit.cshtml" />
     <Content Include="Views\Banks\WithDraw.cshtml" />
     <Content Include="Views\Banks\Transfer.cshtml" />
+    <Content Include="Views\Banks\GetTransaction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

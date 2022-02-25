@@ -20,10 +20,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Deposit", "Deposit", "Banks")</li>
+                    <li>@Html.ActionLink("Transfer", "Transfer", "Banks")</li>
+                    <li>@Html.ActionLink("Withdraw", "Withdraw", "Banks")</li>
+                    <li>@Html.ActionLink("Transaction", "GetTransaction", "Banks")</li>
                 </ul>
+                @if (Session["FullName"] != null)
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="color: #9d9d9d; line-height: 20px; padding-top: 15px; padding-bottom: 15px; position: relative; display: block; padding: 15px 15px; ">@Session["FullName"].ToString()</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Banks")</li>
+                    </ul>
+                }
             </div>
         </div>
     </div>
